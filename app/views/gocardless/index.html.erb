@@ -1,0 +1,35 @@
+<h1>GoCardless sample application</h1>
+
+<p>
+Click "Make purchase" to go through the flow of making a simple
+one-off purchase.
+<%= form_tag("/gocardless/buy", :method => "post") do %>
+  <%= hidden_field_tag(:amount, 10) %>
+  <%= hidden_field_tag(:name, "One-off purchase") %>
+  <%= submit_tag("Make purchase") %>
+<% end %>
+</p>
+
+<p>
+Click "Subscribe" to go through the flow of signing up for
+subscription.
+<%= form_tag("/gocardless/subscribe", :method => "post") do %>
+  <%= hidden_field_tag(:amount, 10) %>
+  <%= hidden_field_tag(:interval_unit, "month") %>
+  <%= hidden_field_tag(:interval_length, 1) %>
+  <%= hidden_field_tag(:name, "Sample subscription") %>
+  <%= submit_tag("Subscribe") %>
+<% end %>
+</p>
+
+<p>
+Click "Preauthorize" to go through the flow of preauthorizing
+a variable direct-debit payment.
+<%= form_tag("/gocardless/preauth", :method => "post") do %>
+  <%= hidden_field_tag(:amount, 100) %>
+  <%= hidden_field_tag(:interval_unit, "month") %>
+  <%= hidden_field_tag(:interval_length, 3) %>
+  <%= hidden_field_tag(:name, "Sample preauthorisation") %>
+  <%= submit_tag("Preauthorize") %>
+<% end %>
+</p>

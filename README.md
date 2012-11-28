@@ -80,8 +80,11 @@ Please refer to the [the Webhooks manual](https://sandbox.gocardless.com/docs/ru
 Once you have the app running with `rails server` and tunneling set up with
 `localtunnel` (make sure you verify that by navigating to the URL that
 `localtunnel` gives back to you) navigate to the "Web hooks" tab under the
-Developer section in GoCardless Sandbox. There should be a button for sending a
-test webhook. Click that, select `Bill` as the object type and click `Fire webhook`.
+Developer section in GoCardless Sandbox. Make sure that the Webhook URL is the same
+you got back from `localtunnel` with an added `/gocardless/webhook` at the end, i.e
+`http://3u5q.localtunnel.com/gocardless/webhook`, otherwise it does not work.
+There should be a button for sending a test webhook. Click that, select `Bill`
+as the object type and click `Fire webhook`.
 
 The data from Webhook is accessible in the `webhook` endpoint in
 `app/controllers/gocardless_controller.rb` in the `webhook_data` variable.

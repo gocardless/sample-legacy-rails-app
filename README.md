@@ -76,6 +76,7 @@ $ localtunnel -k ~/.ssh/id_rsa.pub 3000
 ```
 Please refer to the [the Webhooks manual](https://sandbox.gocardless.com/docs/ruby/merchant_tutorial_webhook#receiving-webhooks) for more details.
 
+### Test your Webhooks
 Once you have the app running with `rails server` and tunneling set up with
 `localtunnel` (make sure you verify that by navigating to the URL that
 `localtunnel` gives back to you) navigate to the "Web hooks" tab under the

@@ -56,7 +56,7 @@ class GocardlessControllerTest < ActionController::TestCase
     GoCardless.stubs(:confirm_resource).raises(GoCardless::ApiError, @response)
     get :confirm
     assert_response :success
-    assert "h3", "Could not confirm purchase. Details: GoCardless::ApiError [200]"
+    assert_select "h3", "Could not confirm purchase. Details: GoCardless::ApiError [200]"
   end
 
 end

@@ -3,19 +3,15 @@ class GocardlessController < ApplicationController
   end
 
   def buy
-    url_params = {
-      amount: params[:amount],
-      name: params[:name]
-    }
-    url = GoCardless.new_bill_url(url_params)
+    url = GoCardless.new_bill_url(amount: params[:amount], name: params[:name])
     redirect_to(url)
   end
 
   def subscribe
     url_params = {
       amount: params[:amount],
-      interval_unit: params["interval_unit"],
-      interval_length: params["interval_length"],
+      interval_unit: params[:interval_unit],
+      interval_length: params[:interval_length],
       name: params[:name]
     }
     url = GoCardless.new_subscription_url(url_params)
@@ -25,8 +21,8 @@ class GocardlessController < ApplicationController
   def preauth
     url_params = {
       amount: params[:amount],
-      interval_length: params["interval_length"],
-      interval_unit: params["interval_unit"],
+      interval_length: params[:interval_length],
+      interval_unit: params[:interval_unit],
       name: params[:name]
     }
     url = GoCardless.new_pre_authorization_url(url_params)
@@ -59,6 +55,6 @@ class GocardlessController < ApplicationController
       # log the error
     end
 
-    render :nothing => true, :status => 200
+    render nothing: true, status: 200
   end
 end

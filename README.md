@@ -8,7 +8,7 @@ The first thing to do is to clone the repository:
 $ git clone https://github.com/gocardless/sample-rails-app.git
 ```
 
-Change the account details in `app/initializers/gocardless.rb` to match your
+Change the account details in `config/initializers/gocardless.rb` to match your
 **SANDBOX** developer credentials.
 
 Then install the Gems:

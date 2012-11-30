@@ -16,7 +16,7 @@ class GocardlessController < ApplicationController
     url = GoCardless.new_subscription_url(
       amount: "10",
       interval_unit: "month",
-      interval_length: "1",
+      interval_length: 1,
       name: "Sample subscription"
     )
     redirect_to(url)
@@ -26,8 +26,8 @@ class GocardlessController < ApplicationController
   def preauth
     url = GoCardless.new_pre_authorization_url(
       amount: "100",
-      interval_length: "month",
-      interval_unit: "3",
+      interval_unit: "month",
+      interval_length: 3,
       name: "Sample preauthorization"
     )
     redirect_to(url)
